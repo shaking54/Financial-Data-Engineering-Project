@@ -1,0 +1,6 @@
+transaction_id,account_id,date,amount,type,merchant_id
+1,101,2024-12-01,250.75,debit,201
+2,102,2024-12-02,500.5,credit,202
+3,103,2024-12-02,120.0,debit,203
+4,104,2024-12-03,75.25,debit,204
+5,105,2024-12-03,330.0,credit,205
