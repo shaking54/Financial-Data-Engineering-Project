@@ -1,0 +1,6 @@
+postgres:
+  host: localhost
+  port: 5432
+  db: finance_dw
+  user: postgres
+  password: postgres
