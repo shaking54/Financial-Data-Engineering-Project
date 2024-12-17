@@ -5,16 +5,16 @@ CREATE DATABASE finance_dw;
 CREATE TYPE quarter_type AS ENUM ('Q1', 'Q2', 'Q3', 'Q4');
 
 CREATE TABLE IF NOT EXISTS fact_transactions (
-    transaction_id INT PRIMARY KEY,
-    account_id INT NOT NULL,
+    transaction_id VARCHAR(255) PRIMARY KEY,
+    account_id VARCHAR(255) NOT NULL,
     date TIMESTAMP NOT NULL,
     amount REAL,
     type VARCHAR(255),
-    merchant_id INT
+    merchant_id VARCHAR(255) NOT NULL,
 );
 
 CREATE TABLE IF NOT EXISTS dim_customers (
-    customer_id INT PRIMARY KEY,
+    customer_id VARCHAR(255) PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE,
     dob TIMESTAMP,
@@ -23,13 +23,13 @@ CREATE TABLE IF NOT EXISTS dim_customers (
 
 CREATE TABLE IF NOT EXISTS dim_accounts (
     account_id INT PRIMARY KEY, 
-    customer_id INT NOT NULL REFERENCES Customers(customer_id),
+    customer_id INT NOT NULL REFERENCES dim_customers(customer_id),
     account_type VARCHAR(255),
     balance REAL
 );
 
 CREATE TABLE IF NOT EXISTS dim_merchants (
-    merchant_id INT PRIMARY KEY, 
+    merchant_id VARCHAR(255) PRIMARY KEY, 
     name VARCHAR(255),
     category VARCHAR(255),
     location VARCHAR(255)

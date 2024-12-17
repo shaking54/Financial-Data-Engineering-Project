@@ -16,9 +16,8 @@ This project involves building a robust **Data Warehouse** for the finance and b
 finance-data-engineering-project/
 ├── data/               # Raw and processed data files
 ├── notebooks/          # Jupyter notebooks for exploration and prototyping
-├── etl/                # PySpark scripts for ETL processing
+├── etl/                # PySpark scripts for ETL processing & Airflow DAGs for pipeline orchestration
 ├── models/             # Data modeling files (e.g., dbt or SQL scripts)
-├── dags/               # Apache Airflow DAGs for pipeline orchestration
 ├── sql_queries/        # SQL scripts for analytics and reporting
 ├── config/             # Configuration files
 ├── docs/               # Project documentation
@@ -45,7 +44,7 @@ The data model follows a **Star Schema** design for efficient querying and repor
 
 ### **Fact Table**
 - **Transactions**: Records of financial transactions.
-  - Columns: `transaction_id`, `account_id`, `date`, `amount`, `type`, `merchant_id`
+  - Columns: `transaction_id`, `account_id`, `date`, `amount`, `type`, `merchant_id`, ``
 
 ### **Dimension Tables**
 - **Customers**: Details about account holders.

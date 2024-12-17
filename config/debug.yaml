@@ -1,0 +1,17 @@
+local:
+  SPARK_HOST: local[*]
+  POSTGRES: localhost
+  POSTGRES_PORT: 5432
+  POSTGRES_DB: finance_dw
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: postgres
+
+
+docker:
+  SPARK_HOST: spark://spark-master-2:7077
+  POSTGRES: postgres
+  POSTGRES_PORT: 5432
+  POSTGRES_DB: finance_dw
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: postgres
+

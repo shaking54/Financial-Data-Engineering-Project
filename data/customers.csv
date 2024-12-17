@@ -1,6 +1,0 @@
-customer_id,name,email,dob,country
-1,Alice Smith,alice@example.com,1990-01-15,USA
-2,Bob Johnson,bob@example.com,1985-06-20,Canada
-3,Charlie Lee,charlie@example.com,1978-03-05,UK
-4,Diana Prince,diana@example.com,1992-07-25,Australia
-5,Ethan Hunt,ethan@example.com,1988-11-30,Germany
