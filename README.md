@@ -1,4 +1,4 @@
-# Financial Data Engineering Project
+# FinFlow
 
 This project involves building a robust **Data Warehouse** for the finance and banking sector. The focus is on designing a scalable architecture, implementing ETL pipelines, and leveraging **PySpark** for data processing. The outcome is an end-to-end solution for analytics and reporting on financial data.
 
