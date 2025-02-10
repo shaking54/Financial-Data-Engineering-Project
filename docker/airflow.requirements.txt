@@ -1,0 +1,5 @@
+faker
+pandas
+pyspark==3.5.3
+numpy
+psycopg2-binary

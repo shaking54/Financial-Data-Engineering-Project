@@ -1,0 +1,37 @@
+version: '3.9'
+services:
+  spark-master:
+    image: bitnami/spark:latest
+    container_name: spark-master-2
+    environment:
+      - SPARK_MODE=master
+    ports:
+      - "7077:7077"
+      - "8080:8080"
+    volumes:
+      - ../config/spark.conf:/opt/bitnami/spark/conf/spark-defaults.conf:rw
+      - ../data:/opt/bitnami/spark/data
+      - ../etl:/opt/bitnami/spark/etl
+    networks:
+      - default
+
+  spark-worker:
+    image: bitnami/spark:latest
+    container_name: spark-worker-2
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master-2:7077
+    depends_on:
+      - spark-master
+    ports:
+      - "8081:8081"
+    volumes:
+      - ../data:/opt/bitnami/spark/data
+      - ../etl:/opt/bitnami/spark/etl
+      - ../config/spark.conf:/opt/bitnami/spark/conf/spark-defaults.conf:rw
+    networks:
+      - default
+
+networks:
+  default:
+    driver: bridge
