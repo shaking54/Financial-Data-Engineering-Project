@@ -4,7 +4,8 @@ from pyspark.sql.functions import col, upper, lit
 def transform_data(params):
     input_path = params['processed']
     output_path = params['star']
-                         
+    spark_host = params['spark_host']
+
     spark = SparkSession.builder \
         .appName("FinancialTransactionsETL") \
         .master("local[*]") \

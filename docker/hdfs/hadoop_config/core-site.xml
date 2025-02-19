@@ -1,0 +1,4 @@
+<property>
+    <name>fs.defaultFS</name>
+    <value>hdfs://hdfs-namenode:8082</value>
+</property>
