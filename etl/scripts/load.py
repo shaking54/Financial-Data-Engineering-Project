@@ -9,12 +9,12 @@ def load_data(params):
     
     spark = SparkSession.builder \
                         .appName("FinancialTransactionsETL") \
-                        .master(spark_host) \
+                        .master("local[*]") \
                         .config("spark.jars.packages", "org.postgresql:postgresql:42.2.5") \
                         .getOrCreate()
 
     # Load transformed data
-    transactions = spark.read.csv(f"{input_path}/transactions")
+    transactions = spark.read.csv(f"{input_path}/transactions", header=True, inferSchema=True)
     customers = spark.read.csv(f"{input_path}/customers",header=True, inferSchema=True)
     accounts = spark.read.csv(f"{input_path}/accounts",header=True, inferSchema=True)
     merchants = spark.read.csv(f"{input_path}/merchants",header=True, inferSchema=True)

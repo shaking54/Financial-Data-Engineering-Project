@@ -1,5 +1,4 @@
 from airflow import DAG
-from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
 from airflow.operators.python import PythonOperator
 from datetime import datetime
 from scripts.transform import transform_data
@@ -9,7 +8,7 @@ default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
     'email_on_failure': False,
-    'retries': 1,
+    'retries': 0,
 }
 
 with DAG(
@@ -19,9 +18,9 @@ with DAG(
         'raw': 'data/raw',
         'processed': 'data/processed',
         'star': 'data/star',
-        'db_url': 'jdbc:postgresql://localhost:5432/finance_dw',
+        'db_url': 'jdbc:postgresql://postgres:5432/finance_dw',
         'db_properties': {"user": "postgres", "password": "postgres", "driver": "org.postgresql.Driver"},
-        'spark_host': 'local[*]'
+        'spark_host': 'spark://spark-master-2:7077',
     },
     description='Run PySpark jobs using Airflow',
     catchup=False,
