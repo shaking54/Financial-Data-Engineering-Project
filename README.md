@@ -33,9 +33,10 @@ finance-data-engineering-project/
 | **PySpark**         | Distributed data processing               |
 | **Apache Airflow**  | ETL pipeline orchestration                |
 | **PostgreSQL**      | Data Warehouse                            |
-| **dbt**             | Data modeling and schema management       |
 | **Python**          | General-purpose programming               |
 | **Tableau / Power BI** | Data visualization                      |
+| **Docker**             | Container       |
+| **HDFS**             | Hadoop Distributed File System       |
 
 ---
 
@@ -151,4 +152,3 @@ transactions_df.write \
 ## 📚 **Future Enhancements**
 - Implement real-time data ingestion using Kafka.
 - Add machine learning for fraud detection.
-- Migrate to a cloud-based Data Warehouse (e.g., Snowflake, Redshift).
